@@ -1,20 +1,29 @@
 /*
  * xcoder.h
  *
- *  Created on: Jul 23, 2018
- *      Author: Jason Berger
+/**
+ * @file audio_xcoder.h
+ * @author Jason Berger
+ * @brief 
+ * @version 0.1
+ * @date 2020-02-04
+ * 
  */
-
 #pragma once
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "fifo.h"
+#include "Utilities/Fifo/fifo.h"
 
 #define XCODER_RATE_48k 48000
 #define XCODER_RATE_56k 56000
 #define XCODER_RATE_64k 64000
+#define XCODER_RATE_NONE 0
 
 #define XCODER_OPT_NONE	0x00
 #define XCODER_OPT_PACKED 0x02
@@ -84,3 +93,7 @@ int xcoder_encode_g722(xcoder_ctx_t* ctx, int len);
 int xcoder_decode_g722(xcoder_ctx_t* ctx, int len);
 int xcoder_decode_ulaw(xcoder_ctx_t* ctx, int len);
 int xcoder_encode_ulaw(xcoder_ctx_t* ctx, int len);
+
+#ifdef __cplusplus
+}
+#endif

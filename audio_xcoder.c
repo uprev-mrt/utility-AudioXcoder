@@ -1,5 +1,12 @@
-
-#include <xcoder.h>
+/**
+ * @file audio_xcoder.c
+ * @author Jason Berger
+ * @brief 
+ * @version 0.1
+ * @date 2020-02-04
+ * 
+ */
+#include "audio_xcoder.h"
 
 
 
@@ -47,6 +54,7 @@ void xcoder_ctx_init(xcoder_ctx_t* ctx , int rate, uint8_t options)
         ctx->bits_per_sample = 7;
     else
         ctx->bits_per_sample = 8;
+
     if ((options & XCODER_OPT_8k))
         ctx->eight_k = true;
     if ((options & XCODER_OPT_PACKED)  &&  ctx->bits_per_sample != 8)
